@@ -8,14 +8,15 @@
     Yes, it is <em>TOMPOUCE FRIDAY</em> ! :)
     <br>
     <br>
-    GO GET 'EM
+    GO GET 'EM !
 </p>
 <p id="no">
     No, it is only <span id="day"></span>. :(
     <br>
     <br>
-    GO ORDER 'EM
+    GO ORDER 'EM !
 </p>
+<img id="picture" alt="Picture" src="picture.png" height="600px">
 <script>
     (function() {
         "use strict";
@@ -95,11 +96,27 @@
         font-style: normal;
         padding: 0 0.25em;
 
-        animation: rainbow 20s linear infinite;
+        animation: rainbow-position-x 20s linear infinite;
     }
 
-    @keyframes rainbow {
-          0% { background-position-x:    0px; }
+    #picture {
+        background-color: #ff7699;
+        background-image: url(tompouce.png);
+        background-position: center center;
+
+        border-radius: 20px;
+        border: solid 10px black;
+
+        animation: rainbow-position-y 20s linear infinite;
+    }
+
+    @keyframes rainbow-position-x {
+          0% { background-position-x:     0px; }
         100% { background-position-x: 10000px; }
+    }
+
+    @keyframes rainbow-position-y {
+          0% { background-position-y:     0px; }
+        100% { background-position-y: 10000px; }
     }
 </style>
