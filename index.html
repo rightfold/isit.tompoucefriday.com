@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="icon" href="tompouce.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+<title>Is It Tompouce Friday?</title>
+<p id="noscript">Ruud, gewoon JavaScript aanzetten.</p>
+<p id="yes">
+    Yes, it is <em>TOMPOUCE FRIDAY</em> ! :)
+    <br>
+    <br>
+    GO GET 'EM
+</p>
+<p id="no">
+    No, it is only <span id="day"></span>. :(
+    <br>
+    <br>
+    GO ORDER 'EM
+</p>
+<script>
+    (function() {
+        "use strict";
+
+        var now = new Date();
+        var noscriptE = document.getElementById("noscript");
+        var yesE = document.getElementById("yes");
+        var noE = document.getElementById("no");
+        var dayE = document.getElementById("day");
+
+        noscriptE.remove();
+
+        var day = now.getDay();
+        var days = [
+            "WOCHENENDE",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Tompouce Friday",
+            "WOCHENENDE",
+        ];
+
+        if (day === 5) {
+            noE.remove();
+        } else {
+            yesE.remove();
+            dayE.textContent = days[day];
+        }
+    })();
+</script>
+<style>
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        background-color: #e47699;
+        background-image: linear-gradient(
+            #e47699   0%,
+            #e47699  10%,
+
+            #cdb990  10%,
+            #cdb990  20%,
+
+            #dcd7a6  20%,
+            #dcd7a6  90%,
+
+            #c7b88e  90%,
+            #c7b88e 100%
+        );
+
+        font-family: "Fredoka One", sans-serif;
+        font-size: 40px;
+
+        padding: 70px 40px;
+
+        text-align: center;
+    }
+
+    #yes > em {
+        background-color: magenta;
+        background-image: linear-gradient(
+            to right,
+            red,
+            orange,
+            yellow,
+            green,
+            cyan,
+            blue,
+            violet,
+            red
+        );
+        color: white;
+
+        font-style: normal;
+        padding: 0 0.25em;
+
+        animation: rainbow 20s linear infinite;
+    }
+
+    @keyframes rainbow {
+          0% { background-position-x:    0px; }
+        100% { background-position-x: 10000px; }
+    }
+</style>
